@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5deb3;
+    margin: 0;
+    padding: 20px; /* Conserve le padding pour le reste du contenu */
+    box-sizing: border-box;
+}
+
+/* Styles pour le titre */
+.main-title {
+    text-align: center; /* Centre le texte horizontalement */
+    margin-top: 20px; /* Ajoute un espacement au-dessus du titre pour le séparer de la navbar */
+    font-size: 2.5rem; /* Taille de la police, ajuste si nécessaire */
+    color: darkolivegreen; /* Couleur pour correspondre au reste du thème */
+}
+
+/* Assurez-vous d'ajouter un margin-top au premier conteneur pour le contenu */
+.form-container,
+.table-container {
+    margin-top: 20px; /* Assure que le contenu ne soit pas caché par la navbar */
+}
+
+/* Les styles suivants restent inchangés */
+h1,
+h2 {
+    color: darkolivegreen;
+    font-size: 2rem;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+.button {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.button {
+    background-color: #556b2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #4b5320;
+}
+
+.table-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-container,
+    .table-container {
+        padding: 1.5rem;
+        margin-top: 20px; /* Pour petits écrans également */
+    }
+
+    .button {
+        padding: 0.8rem;
+    }
+
+    th,
+    td {
+        padding: 0.8rem;
+    }
+}
