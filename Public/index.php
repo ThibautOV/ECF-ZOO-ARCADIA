@@ -1,23 +1,31 @@
 <?php
+// index.php
+require_once 'config.php';
 
-use App\Autoloader;
-use App\config\Main;
-use Dotenv\Dotenv;
+$action = $_GET['action'] ?? 'home';
 
-// Inclure l'autoloader de Composer
-require_once __DIR__ . '/../vendor/autoload.php';
+switch ($action) {
+    case 'home':
+        require 'Controllers/HomeController.php';
+        $controller = new HomeController();
+        $controller->index();
+        break;
+    
+    case 'listServices':
+        require 'Controllers/ServiceController.php';
+        $controller = new ServiceController();
+        $controller->listServices();
+        break;
 
-$dotenv = Dotenv::createImmutable(DIR . '/../');
-$dotenv->load();
+    case 'listHabitats':
+        require 'Controllers/HabitatController.php';
+        $controller = new HabitatController();
+        $controller->listHabitats();
+        break;
 
-// Définition d'une constante avec le chemin racine du projet
-define('ROOT', dirname(_DIR));
-
-require_once ROOT . '/Autoloader.php';
-Autoloader::register();
-
-$app = new Main();
-
-$app->start();
-
+    // Ajoutez d'autres routes pour chaque fonctionnalité
+    default:
+        echo "Page non trouvée.";
+        break;
+}
 ?>
